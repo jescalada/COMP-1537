@@ -7,20 +7,20 @@
   }
   
   a:hover {
-    color: hotpink;
+    color: yellowgreen);
   }
   
   a:active {
-    color: blue;
+    color: lightskyblue;
   }
   
   td h3 {
-    background-color:  #ff9999;
+    background-color: lightsalmon;
     color: black;
   }
   
   h3 {
-    background-color:  #00b33c;
+    background-color:  lightgreen;
     color: white;
     border: 3px solid black;
   }
@@ -31,5 +31,5 @@
   }
   
   table table tr td {
-    color:#ff6347;
+    color: lightyellow;
   }
