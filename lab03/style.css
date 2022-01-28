@@ -1,25 +1,24 @@
-.grey {
-    background-color: lightgrey;
-  }
-  
-  #first_block {
+  #first {
     width: 300px;
+    margin: 20px;
     border: 15px solid green;
     padding: 50px;
-    margin: 20px;
   }
   
-  #second_block {
+  #second {
     width: auto;
+    margin: 20px;
     border: 10px dashed red;
     padding: 10px;
-    margin: 20px;
   }
   
-  #third_block {
+  #third {
     width: 40%;
+    margin: 20px;
     border: 5px double blue;
     padding: 20px;
-    margin: 20px;
   }
   
+  .grey-bg {
+    background-color: lightgrey;
+  }

@@ -1,0 +1,23 @@
+  table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  a:link {
+    color: red;
+  }
+  
+  a:visited {
+    color: green;
+  }
+  
+  a:hover {
+    color: lightsalmon;
+  }
+  
+  a:active {
+    color: lightskyblue;
+  }
