@@ -1,11 +1,32 @@
 #left-panel {
     background-color: #F6F6F6;
-    width: 15%;
+    width: 13%;
     height: 100%;
-    padding-bottom: 100px;
-    padding-top: 0px;
+    margin-top: 300px;
     display: inline-block;
     vertical-align: top;
+    padding-left: 1%;
+}
+
+a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: #0645ad;
+}
+
+a:visited {
+    color: #0645ad;
+}
+
+html {
+    background-color: #F6F6F6;
 }
 
 #main-container {
@@ -14,11 +35,14 @@
 }
 
 #main-content {
-    border-left: 2px #CCC solid;
-    border-top: 2px #CCC solid;
+    border: 2px #CCC solid;
+    background-color: white;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    margin-left: 8px;
     padding: 16px;
     display: inline-block;
-    width: 83%;
+    width: 82%;
 }
 
 hr {
@@ -41,32 +65,29 @@ hr {
     font-size: 48px;
 }
 
-#empty-header {
-    background-color: #F6F6F6;
-    height: 100px;
-}
-
 #left-panel__links {
     font-family: sans-serif;
-    margin: 0;
+    font-weight: normal;
+    color: #666;
     padding: 0;
     list-style: none;
 }
 
 #left-panel__title {
-    font-size: 28px;
+    font-size: 24px;
     margin: 10px;
 }
 
 .left-panel__link {
     padding: 4px 0px;
     margin: 0px 10px;
-    font-size: 20px;
+    color: #0645ad;
+    font-size: 16px;
 }
 
 .article-cover {
     float: right;
-    width: 400px;
+    width: 25%;
     border: 2px solid #DDD;
     padding: 8px;
 }
@@ -115,6 +136,7 @@ hr {
 
 #article-contents li {
     list-style: none;
+    text-decoration: none;
     font-size: 16px;
 }
 
@@ -183,8 +205,32 @@ hr {
     /* line-height helps us define spacing between lines */
     line-height: 150%;
     display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .content-item {
     margin-left: 4px;
+}
+
+.content-item a:visited {
+    color: #0645ad;
+}
+
+.subsection-title {
+    font-family: sans-serif;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 8px;
+}
+
+#citations {
+    margin-top: 4px;
+    margin-left: 32px;
+    padding: 8px;
+}
+
+.citation {
+    font-size: 14px;
+    font-family: sans-serif;
 }
