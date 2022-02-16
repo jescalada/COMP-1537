@@ -10,6 +10,7 @@
         }
 
         nav {
+
             background-color: #333;
             overflow: hidden;
         }
@@ -26,12 +27,9 @@
         }
 
         .img-container {
-            width:33.3%;
-            float: right;
+            width: 33%;
+            float: left;
             padding: 10px;
-            /* margin-left: 20%; */
-        
-
         }
 
         img {
@@ -48,8 +46,7 @@
         }
 
         .clearfix::after {
-            clear: both;
-            
+            clear: both;  
         }
 
         nav a {
@@ -98,18 +95,13 @@
         * {
             font-family: Arial, Helvetica, sans-serif;
         }
-        .img-container img {
-            width: 100%;
-
-        }
-
     </style>
 </head>
 
 <body>
     <header>
         <h1>
-            Responsive Random Image Gallery
+            Responsive Random Image Gallery (3x3)
         </h1>
     </header>
     <nav>
@@ -132,18 +124,47 @@
     <main>
         <p>
             This is a responsive image gallery with random images from picsum.photos.
+            There are 3x3 images in this gallery.  
         </p>
 
         <div class="clearfix">
-            <div id="center">
-                <div class="img-container" style="float: left; margin-left: 0px;" >
-                    <img src="https://picsum.photos/536/351?random=1" alt="Random Picture 1" >
+            <div id="center">  
+                <div class="img-container">
+                    <img src="https://picsum.photos/536/350/" alt="Random Image 1" style="width:100%">
                 </div>   
                 <div class="img-container">
-                    <img src="https://picsum.photos/536/351?random=2" alt="Random Picture 2">
+                    <img src="https://picsum.photos/536/353/" alt="Random Image 2" style="width:100%">
                 </div>  
                 <div class="img-container">
-                    <img src="https://picsum.photos/536/351?random=3" alt="Random Picture 3">
+                    <img src="https://picsum.photos/536/349/" alt="Random Image 3" style="width:100%">
+                </div>  
+            </div>
+        </div>
+
+        <div class="clearfix" >
+            <div id="center">  
+                <div class="img-container">
+                    <img src="https://picsum.photos/536/351/" alt="Random Image 4" style="width:100%">
+                </div>   
+                <div class="img-container">
+                    <img src="https://picsum.photos/536/352/" alt="Random Image 5" style="width:100%">
+                </div>  
+                <div class="img-container">
+                    <img src="https://picsum.photos/536/354/" alt="Random Image 6" style="width:100%">
+                </div>  
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div id="center">  
+                <div class="img-container">
+                    <img src="https://picsum.photos/536/356/" alt="Random Image 7" style="width:100%">
+                </div>   
+                <div class="img-container">
+                    <img src="https://picsum.photos/536/355/" alt="Random Image 8" style="width:100%">
+                </div>  
+                <div class="img-container">
+                    <img src="https://picsum.photos/536/357/" alt="Random Image 9" style="width:100%">
                 </div>  
             </div>
         </div>
