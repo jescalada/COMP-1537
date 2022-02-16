@@ -74,11 +74,12 @@ ul {
 }
 
 a {
+    color: var(--color-darkest);
     text-decoration: none;
 }
 
 a:visited {
-    color: var(--color-dark);
+    color: var(--color-darkest);
     text-decoration: none;
 }
 
