@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Lab 7 - Improved JQuery calculator</h1>
+        
+        <div id="input-box">       
+            <label for="first-operand">First operand:</label>
+            <input type="text" id="first-operand" name="first" value="3"><br><br>
+            <label for="second-operand">Second operand:</label>
+            <input type="text" id="second-operand" name="second" value="5"><br><br>
+            <button id="sum" class="operator">+</button>
+            <button id="subtract" class="operator">-</button>
+            <button id="multiply" class="operator">*</button>
+            <button id="divide" class="operator">/</button>
+        </div>
+    
+        <div id="history-box">
+            <h2>History</h2>
+            <ul id="history-items">
+            </ul>
+        </div>
+
+    </main>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
