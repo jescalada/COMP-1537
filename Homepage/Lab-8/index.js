@@ -1,0 +1,49 @@
+function ajaxGet() {
+    let movieName = jQuery('#movie-name-input').val();
+    let apiKey = "ed4ef9b0f9bcb9c237ab83a2c2ffb909";
+    
+    $.ajax(
+        {
+            "url":`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`,
+            "type": "GET",
+            "success": processRequest
+        }
+    )
+}
+
+function processRequest(data) {
+    $("#movies").empty();
+
+    data.results.forEach((movie, index) => {
+        
+        // Here, I define a new element to append to the #movies ul.
+        
+        // In the h2, I am appending the title of the movie, and then I am using the ternary operator (if statement ? then : else)
+        // In the ternary operator, I'm checking if release_date is not null, in which case I put it between parenthesis and add it to the h2
+        // If release_date is null, then it does not append anything
+        // release_date has the form 2022-03-08 when not null, I slice it to obtain only the year of release
+
+        // In the img tag, I am also using a ternary operator to append the movie poster image if it is not null, or put a default image if it is null
+        let listEntry = `
+        <li id="movie-${index}">
+            <h2>${movie.original_title} ${ movie.release_date ? "(" + movie.release_date.slice(0, 4) + ")" : "" }</h2>
+            <p>${movie.overview}</p>
+            <img src=" ${ movie.poster_path ? "http://image.tmdb.org/t/p/w500/" + movie.poster_path : "https://demofree.sirv.com/nope-not-here.jpg" } " width="100">
+        </li>
+        <hr>
+        `;
+
+        // We add a JQuery listener on the PARENT ELEMENT of the movies. This is because the movies don't yet exist until we append them into the DOM 
+        $("#movies").on("click", `#movie-${index}`, function() {
+            $("#backdrop").attr("src", `${ movie.backdrop_path ? "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/" + movie.backdrop_path : "https://demofree.sirv.com/nope-not-here.jpg" }`);
+        });
+
+        $("#movies").append(listEntry);
+    });
+}
+
+function setup() {
+    $('#search-button').click(ajaxGet);
+}
+
+$(document).ready(setup);
