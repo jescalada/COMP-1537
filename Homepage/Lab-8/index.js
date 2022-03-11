@@ -29,6 +29,7 @@ function processRequest(data) {
             <h2>${movie.original_title} ${ movie.release_date ? "(" + movie.release_date.slice(0, 4) + ")" : "" }</h2>
             <p>${movie.overview}</p>
             <img src=" ${ movie.poster_path ? "http://image.tmdb.org/t/p/w500/" + movie.poster_path : "https://demofree.sirv.com/nope-not-here.jpg" } " width="100">
+            Click to see backdrop
         </li>
         <hr>
         `;
