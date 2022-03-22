@@ -13,8 +13,17 @@ function ajaxGet() {
 
 function processRequest(data) {
     $("#movies").empty();
+    
+    let numberOfResults = data.results.length;
+    let pageSize = $("#results-per-page").val(); // Get actual pageSize
+    let totalPages = Math.ceil(numberOfResults / pageSize);
+    let currentPage = 1; // Get actual currentPage
 
-    data.results.forEach((movie, index) => {
+    let startIndex = (currentPage - 1) * pageSize;
+    let endIndex = currentPage * pageSize;
+
+    for (i = startIndex; i < endIndex; i++) {
+        let movie = data.results[i]
         
         // Here, I define a new element to append to the #movies ul.
         
@@ -25,7 +34,7 @@ function processRequest(data) {
 
         // In the img tag, I am also using a ternary operator to append the movie poster image if it is not null, or put a default image if it is null
         let listEntry = `
-        <li id="movie-${index}">
+        <li id="movie-${i}">
             <h2>${movie.original_title} ${ movie.release_date ? "(" + movie.release_date.slice(0, 4) + ")" : "" }</h2>
             <p>${movie.overview}</p>
             <img src=" ${ movie.poster_path ? "http://image.tmdb.org/t/p/w500/" + movie.poster_path : "https://demofree.sirv.com/nope-not-here.jpg" } " width="100">
@@ -35,12 +44,12 @@ function processRequest(data) {
         `;
 
         // We add a JQuery listener on the PARENT ELEMENT of the movies. This is because the movies don't yet exist until we append them into the DOM 
-        $("#movies").on("click", `#movie-${index}`, function() {
+        $("#movies").on("click", `#movie-${i}`, function() {
             $("#backdrop").attr("src", `${ movie.backdrop_path ? "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/" + movie.backdrop_path : "https://demofree.sirv.com/nope-not-here.jpg" }`);
         });
 
         $("#movies").append(listEntry);
-    });
+    }
 }
 
 function setup() {

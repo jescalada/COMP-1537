@@ -7,7 +7,15 @@
     <title>Lab 8 - JQuery & APIs</title>
   </head>
   <body>
-    <p style="display: inline;">Movie Name</p>
+    <label for="results-per-page">Page size </label>
+    <select name="results-per-page" id="results-per-page">
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+    <br>
+    <p style="display: inline;">Search movie by title</p>
     <input type="text" id="movie-name-input" value="300" style="display: inline;"><br>
     <button type="submit" id="search-button" style="float: left;">Get</button>
 
