@@ -4,28 +4,32 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
     <title>Lab 8 - JQuery & APIs</title>
   </head>
   <body>
     <label for="results-per-page">Page size </label>
-    <select name="results-per-page" id="results-per-page">
+    <select name="results-per-page" id="results-per-page" onchange="changePageSize()">
       <option value="3">3</option>
       <option value="5">5</option>
       <option value="10">10</option>
       <option value="20">20</option>
     </select>
     <br>
-    <p style="display: inline;">Search movie by title</p>
+    <div class="pagination">
+    </div>
+    <br>
+    <p style="display: inline;" id="search-text">Search movie by title</p>
     <input type="text" id="movie-name-input" value="300" style="display: inline;"><br>
     <button type="submit" id="search-button" style="float: left;">Get</button>
 
     <div style="float: left; width: 25%;">
-        <ol id="movies">
+        <ul id="movies">
     
-        </ol>  
+        </ul>  
     </div>
 
-    <div style="float: right; left: 30%; width: 65%; position: fixed;">
+    <div style="float: right; left: 30%; width: 65%; position: fixed; top: 40px">
         <img id="backdrop" style="float: right;">
     </div>
     </body>
