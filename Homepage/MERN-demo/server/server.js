@@ -37,7 +37,8 @@ const https = require('https');
 
 app.post("/weather", function (req, res) {
     // res.send("post req received" + req.body.cityName);
-    var apikey = "b660f3402c54cb9a9c48f89c35249e5c";
+    var apikey = "a35e169d3416373244a7aae233af3555";
+    console.log(req.body.cityName);
     const url = "https://api.openweathermap.org/data/2.5/weather?q=" + req.body.cityName + "&units=metric&appid=" + apikey
 
     https.get(url, function (https_res) {
@@ -51,7 +52,6 @@ app.post("/weather", function (req, res) {
         })
     });
 })
-
 
 app.get('/cities/:city_name', function (req, res) {
     console.log("received a request for " + req.params.city_name);
@@ -78,26 +78,26 @@ app.get('/cities', function (req, res) {
     });
 })
 
-app.put("/insert", function(req, res){
+app.post("/insert", function (req, res) {
     cityModel.create({
-      name : req.body.name,
-      temperature : req.body.temperature,
-      description: req.body.description
-    }, function(err, data){
-      if(err) console.log(err);
-      else
-      console.log(data);
-      res.send("All good! Inserted.")
+        name: req.body.name,
+        temperature: req.body.temperature,
+        description: req.body.description
+    }, function (err, data) {
+        if (err) console.log(err);
+        else
+            console.log(data);
+        res.send(`Inserted ${req.body.name} into DB.`);
     });
-  })
+})
 
-  app.delete("/delete/:city_name", function(req, res){
+app.post("/delete/:city_name", function (req, res) {
     cityModel.remove({
-      name : req.body.name
-    }, function(err, data){
-      if(err) console.log(err);
-      else
-      console.log(data);
-      res.send("All good! Delteted.")
+        name: req.body.name
+    }, function (err, data) {
+        if (err) console.log(err);
+        else
+            console.log(data);
+            res.send(`Deleted ${req.body.name} from DB.`);
     });
-  })
+})

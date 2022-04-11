@@ -2,17 +2,41 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> Live Weather Application</title>
+    <title>Juan's MERN App</title>
   </head>
   <body>
-    <h1> Enter City Name:</h1>
-
+    
+    <h2>City Name via POST:</h2>
     <form method="post">
-
       <label> City Name</label>
-
       <input type="text" name="cityName" placeholder="Enter City Name">
       <input type="submit" value="submit">
+    </form>
+
+    <h2>Contact</h2>
+    <a href="/contact">Contact Me</a>
+
+    <h2>Weather thingy</h2>
+    <form action="/weather" method="post">
+      <label for="cityName">City Name:</label>
+      <input type="text" id="cityName" name="cityName"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h1>MongoDB Database functions</h1>
+    <h2>Cities</h2>
+    <a href="/cities">JSON data (/cities)</a>
+    <a href="/cities/Vancouver">Vancouver JSON data (/cities/Vancouver)</a>
+    
+    <h2>Insert data into DB</h2>
+    <form action="/insert" method="post">
+      <label for="name">City Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="temperature">Temperature:</label>
+      <input type="text" id="temperature" name="temperature"><br><br>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description"><br><br>
+      <input type="submit" value="Submit">
     </form>
 
   </body>
